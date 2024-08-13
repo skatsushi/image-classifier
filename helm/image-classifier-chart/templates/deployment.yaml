@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-classifier-deployment
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: image-classifier
+  template:
+    metadata:
+      labels:
+        app: image-classifier
+    spec:
+      containers:
+      - name: image-classifier-container
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        ports:
+        - containerPort: 8501

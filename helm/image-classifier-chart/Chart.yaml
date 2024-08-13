@@ -1,0 +1,5 @@
+apiVersion: v2
+name: image-classifier-chart
+description: A Helm chart to deploy the image classifier app on Kubernetes
+version: 0.1.0
+appVersion: 1.0.0
